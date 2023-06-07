@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\DashboardController;
@@ -48,5 +49,6 @@ Route::middleware('auth:sanctum','verified')->name('dashboard.')->prefix('dashbo
         Route::resource('product', ProductController::class);
         Route::resource('product.gallery', ProductGalleryController::class)->shallow();
         Route::resource('transaction', TransactionController::class);
+        Route::resource('user', UserController::class);
     });
 });
