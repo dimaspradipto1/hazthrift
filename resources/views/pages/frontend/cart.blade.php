@@ -1,7 +1,7 @@
 @extends('layouts.frontend')
 
 @section('content')
-!-- Breadcrumb Section Begin -->
+<!-- Breadcrumb Section Begin -->
 <div class="breacrumb-section">
   <div class="container">
     <div class="row">

@@ -63,7 +63,11 @@
                 <h4>IDR {{ number_format($product->price) }}</h4>
               </div>
               <div class="quantity">
-                <a href="shopping-cart.html" class="primary-btn pd-cart">Add To Cart</a>
+               <form action="{{route('cart-add', $product->id) }}" method="POST">
+                @csrf
+
+                <button type="submit" class="primary-btn pd-cart ">Add To Cart</button>
+              </form>
               </div>
             </div>
           </div>
