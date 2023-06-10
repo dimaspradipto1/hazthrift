@@ -27,7 +27,7 @@
             <ul class="nav-right">
               <li class="cart-icon">
                 Keranjang Belanja &nbsp;
-                <a href="#">
+                <a href="{{ route('cart') }}">
                   <i class="icon_bag_alt"></i>
                 </a>
               </li>

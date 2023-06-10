@@ -34,35 +34,35 @@
               <tbody>
                 <tr>
                   <th class="border px-6 py-4 text-right">Name</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->name }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->name }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Email</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->email }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->email }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Address</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->address }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->address }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Phone</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->phone }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->phone }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Payment</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->payment }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->payment }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Payment URl</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->payment_url }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->payment_url }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Total Price</th>
-                  <th class="border px-6 py-4 text-left">{{ number_format($transaction->total_price) }}</th>
+                  <td class="border px-6 py-4 text-left">{{ number_format($transaction->total_price) }}</th>
                 </tr>
                 <tr>
                   <th class="border px-6 py-4 text-right">Status</th>
-                  <th class="border px-6 py-4 text-left">{{ $transaction->status }}</th>
+                  <td class="border px-6 py-4 text-left">{{ $transaction->status }}</th>
                 </tr>
               </tbody>
             </table>
