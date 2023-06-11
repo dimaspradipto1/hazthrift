@@ -43,9 +43,17 @@
                         <h5>{{ $item->product->name }}</h5>
                       </td>
                       <td class="p-price first-row">IDR {{ number_format($item->product->price) }}</td>
-                      <td class="delete-item"><a href="#"><i class="material-icons">
+                      <td class="delete-item">
+
+                        <form action="{{ route('cart-delete', $item->id) }}" method="POST">
+                          @csrf
+                          @method('DELETE')
+                          
+                          <button type="submit"><i class="material-icons">
                             close
-                          </i></a></td>
+                          </i></button>
+                        </form>
+                      </td>
                     </tr>
                   @endforeach
                   
@@ -53,35 +61,6 @@
               </table>
             </div>
           </div>
-          {{-- <div class="col-lg-8">
-            <h4 class="mb-4">
-              Informasi Pembeli:
-            </h4>
-            <div class="user-checkout">
-              <form>
-                <div class="form-group">
-                  <label for="namaLengkap">Nama lengkap</label>
-                  <input type="text" class="form-control" id="namaLengkap" aria-describedby="namaHelp"
-                    placeholder="Masukan Nama">
-                </div>
-                <div class="form-group">
-                  <label for="namaLengkap">Email Address</label>
-                  <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
-                    placeholder="Masukan Email">
-                </div>
-                <div class="form-group">
-                  <label for="namaLengkap">No. HP</label>
-                  <input type="text" class="form-control" id="noHP" aria-describedby="noHPHelp"
-                    placeholder="Masukan No. HP">
-                </div>
-                <div class="form-group">
-                  <label for="alamatLengkap">Alamat Lengkap</label>
-                  <textarea class="form-control" id="alamatLengkap" rows="3"></textarea>
-                </div>
-              </form>
-            </div>
-          </div> --}}
-
         </div>
       </div>
       <div class="col-lg-4">
@@ -92,37 +71,48 @@
                 Informasi Pembeli:
               </h4>
               <ul>
-              <form>
-                <div class="form-group">
-                  <label for="namaLengkap">Nama lengkap</label>
-                  <input type="text" name="name" class="form-control" id="namaLengkap" aria-describedby="namaHelp"
-                    placeholder="Masukan Nama">
-                </div>
-                <div class="form-group">
-                  <label for="namaLengkap">Email Address</label>
-                  <input type="email" name="email" class="form-control" id="emailAddress" aria-describedby="emailHelp"
-                    placeholder="Masukan Email">
-                </div>
-                <div class="form-group">
-                  <label for="alamatLengkap">Alamat Lengkap</label>
-                  <textarea name="address	" class="form-control" id="alamatLengkap" rows="3"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="namaLengkap">No. HP</label>
-                  <input type="number" name="phone" class="form-control" id="noHP" aria-describedby="noHPHelp"
-                    placeholder="Masukan No. HP">
-                </div>
-              </form>
-              
-                {{-- <li class="subtotal">ID Transaction <span>#SH12000</span></li>
-                <li class="subtotal mt-3">Subtotal <span>$240.00</span></li>
-                <li class="subtotal mt-3">Pajak <span>10%</span></li>
-                <li class="subtotal mt-3">Total Biaya <span>$440.00</span></li>
-                <li class="subtotal mt-3">Bank Transfer <span>Mandiri</span></li>
-                <li class="subtotal mt-3">No. Rekening <span>2208 1996 1403</span></li>
-                <li class="subtotal mt-3">Nama Penerima <span>Shayna</span></li> --}}
+
+                <form action="{{ route('checkout') }}" method="POST">
+                  @csrf
+           
+                  <div class="flex flex-col mb-4">
+                    <label for="complete-name" class="text-sm mb-2">Nama lengkap</label>
+                    <input data-input type="text" id="complete-name" name="name"
+                      class="form-control"
+                      placeholder="masukkan nama" />
+                  </div>
+      
+                  <div class="flex flex-col mb-4">
+                    <label for="email" class="text-sm mb-2">Email Address</label>
+                    <input data-input type="email" id="email" name="email"
+                      class="form-control"
+                      placeholder="masukkan email" />
+                  </div>
+      
+                  <div class="flex flex-col mb-4">
+                    <label for="address" class="text-sm mb-2">Address</label>
+                    <input data-input type="text" id="address"  name="address"
+                      class="form-control"
+                      placeholder="masukkan alamat" />
+                  </div>
+      
+                  <div class="flex flex-col mb-4">
+                    <label for="phone-number" class="text-sm mb-2">Phone Number</label>
+                    <input data-input type="tel" id="phone-number" name="phone"
+                      class="form-control"
+                      placeholder="masukkan no hp" />
+                  </div>
+
+    
+                  <div class="text-center">
+                    <button type="submit" 
+                      class="proceed-btn btn-block">
+                      Checkout Now
+                    </button>
+                  </div>
+                </form>
+                
               </ul>
-              <a href="success.html" class="proceed-btn">I ALREADY PAID</a>
             </div>
           </div>
         </div>
